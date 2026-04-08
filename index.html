@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إلى ملوكة ❤️</title>
     <style>
-        body { background-color: #fff0f3; text-align: center; font-family: 'Arial', sans-serif; margin: 0; padding-top: 50px; }
-        .box { background: white; padding: 30px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.1); width: 85%; max-width: 400px; border: 2px solid #ffccd5; margin-bottom: 20px; }
+        body { background-color: #fff0f3; text-align: center; font-family: 'Arial', sans-serif; margin: 0; padding: 20px 0; }
+        .box { background: white; padding: 30px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 20px rgba(0,0,0,0.1); width: 85%; max-width: 400px; border: 2px solid #ffccd5; margin-top: 50px; }
         h1 { color: #ff4d6d; }
         p { color: #666; font-weight: bold; }
         input { width: 80%; padding: 12px; margin: 10px; border: 2px solid #ff4d6d; border-radius: 10px; text-align: center; font-size: 18px; outline: none; }
         button { background: #ff4d6d; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-size: 20px; font-weight: bold; margin-top: 10px; }
         
-        #surprise { display: none; padding: 20px; animation: fadeIn 1.5s; }
+        #surprise { display: none; width: 100%; animation: fadeIn 1.5s; }
         
-        /* تنسيق الصور تحت بعض */
-        .image-post { width: 100%; max-width: 320px; margin: 30px auto; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid #ffccd5; }
-        .mySlides { width: 100%; border-radius: 15px; border: 4px solid #ff4d6d; }
+        /* الصور تحت بعض بتنسيق الموبايل */
+        .post-card { background: white; width: 90%; max-width: 350px; margin: 20px auto; padding: 15px; border-radius: 20px; border: 2px solid #ffccd5; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .post-card img { width: 100%; border-radius: 15px; border: 3px solid #ff4d6d; display: block; }
+        .post-card .caption { color: #ff4d6d; font-size: 19px; font-weight: bold; margin-bottom: 15px; display: block; line-height: 1.5; }
         
-        /* كلام الحب فوق كل صورة */
-        .caption-text { color: #ff4d6d; font-size: 19px; font-weight: bold; margin-bottom: 12px; display: block; line-height: 1.4; }
-        
-        .love-text { font-size: 20px; color: #444; line-height: 1.6; font-weight: bold; white-space: pre-line; background: #fff; padding: 20px; border-radius: 15px; margin-top: 30px; border: 2px solid #ffccd5; }
+        .final-msg { font-size: 20px; color: #444; line-height: 1.7; font-weight: bold; white-space: pre-line; background: white; width: 85%; max-width: 350px; margin: 30px auto; padding: 20px; border-radius: 15px; border: 2px dashed #ff4d6d; }
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -30,6 +28,55 @@
 
     <div class="box" id="login">
         <h1>يا ملوكة ❤️</h1>
-        <p>دخلي التاريخ (1/1) 😉</p>
+        <p>دخلي التاريخ اللي جمعنا (1/1) 😉</p>
         <input type="number" id="day" placeholder="اليوم">
-        <input type="number" id="month
+        <input type="number" id="month" placeholder="الشهر">
+        <br>
+        <button onclick="openLove()">افتحي يا نوري 💌</button>
+    </div>
+
+    <div id="surprise">
+        <h1 style="color: #ff4d6d; font-size: 28px;">بحبك يا لوكه ❤️🫰</h1>
+        
+        <div class="post-card">
+            <span class="caption">انتي مش بس نوري.. انتي ضحكة قلبي ❤️🥺</span>
+            <img src="https://i.ibb.co/v4m0YhG/1000340511.jpg">
+        </div>
+
+        <div class="post-card">
+            <span class="caption">حبك في قلبي زي النجم في السما ✨🥰</span>
+            <img src="https://i.ibb.co/680L6kH/1.jpg">
+        </div>
+
+        <div class="post-card">
+            <span class="caption">ومعاكي.. الدنيا بتضحك لي من تاني ❤️🫰</span>
+            <img src="https://i.ibb.co/rRBYWGqv/3.jpg">
+        </div>
+
+        <div class="final-msg">
+            ملوكه ؟ احنا اه لسه عارفين بعض بس انتى انسانه تتحبى بسرعه و عندك قبول يا حبيبتي ♥️ 
+            و إن شاء الله نكمل مع بعض للنهايه ♥️😍
+            بحبك يا لوكه ♥️🫰
+        </div>
+
+        <audio id="music" loop>
+            <source src="https://files.catbox.moe/18nlxq.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function openLove() {
+            var d = document.getElementById('day').value;
+            var m = document.getElementById('month').value;
+            var audio = document.getElementById('music');
+            if(d == "1" && m == "1") {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('surprise').style.display = 'block';
+                audio.play();
+            } else {
+                alert("ركزي في التاريخ يا ملوكة 😉❤️");
+            }
+        }
+    </script>
+</body>
+</html>
